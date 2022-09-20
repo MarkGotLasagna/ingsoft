@@ -13,6 +13,10 @@ del corso di "Informatica" anno 2022/2023
 │       ├── helloworld.class
 │       └── helloworld.java
 ├── LESSONS
-│   └── Lesson1 - 19-09.md
+│   ├── Lesson1 - 19-09 (Introduzione).md
+│   ├── Lesson2 - 20-09 (Concurrent SW).md
+│   └── pdf
+│       ├── Lesson1 - 19-09 (Introduzione).pdf
+│       └── Lesson2 - 20-09 (Concurrent SW).pdf
 └── README.md
 ```
