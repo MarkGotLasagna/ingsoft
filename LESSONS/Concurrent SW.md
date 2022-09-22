@@ -1,4 +1,5 @@
-==**Sistemi concorrenti**==
+## I sistemi concorrenti
+#linguaggio-formale #linguaggio-logico #logica #interpretazione #tautologia
 Lo studio dei sistemi concorrenti dal punto di vista matematico facilita lo studio dello stesso. Errori possono essere evitati, race condition, dead lock, ecc. Bisogna capire durante la computazione, usando la *logica*.
 
 $$(p \vee q) \wedge (\neg p \vee \neg q)$$
@@ -15,23 +16,25 @@ Applicare un algoritmo/teorema lo si fa partendo da assiomi e regole. Purtroppo 
 
 ---
 ## Logica proposizionale
-La **logica proposizionale** è formata da simboli: questi simboli sono *atomi* e sono detti come se fossero affermazioni *TRUE* o *FALSE*.
+La **logica proposizionale** è formata da simboli: questi simboli sono *atomi* e sono letti come se fossero affermazioni *TRUE* o *FALSE*.
 
- $q$ = Alice hates Bob...
+ $q$ = Alice odia Bob...
 
 Usiamo *connettivi* per costruire formule.
-Questi hanno precedenza diversa:
+Questi hanno precedenza diversa, in ordine:
 
 $\neg, \wedge, \vee, \to, \equiv$
 
-L'insieme dei simboli prop. è chiamato $P$.
-$\top, \bot$ non sono appartenenti a $P$, hanno valori costanti e sono rispettivamente *TRUE* e *FALSE* (potremmo anche ometterli).
+L'insieme dei simboli proposizionali è chiamato $P$.
+$\top$ (top), $\bot$ (bottom) non sono appartenenti a $P$, hanno valori costanti e sono rispettivamente *TRUE* e *FALSE* (potremmo anche ometterli).
 Le parentesi tonde più esterne possiamo ometterle o meno, possiamo usare quadre e graffe ma non sono necessarie.
 
 $$((p \wedge q)\wedge r) \to p \wedge q \wedge r$$
 
-Se qualcuno fornisce un insieme non vuoto, riusciamo a creare formule ben formate. Abbiamo così la sintassi, ci serve ora la semantica. La logica delle prop. serve ad attribuire un *significato* che è un *valore di verità*. 
-Una interpretazione è una funzione che assegna un valore di verità a ciascun ed ogni simbolo di $P$.
+Se qualcuno fornisce un insieme non vuoto, riusciamo a creare formule ben formate. Abbiamo così la sintassi, ci serve ora la semantica. La logica delle proposizioni serve ad attribuire un *significato* che è un *valore di verità*. 
+Una interpretazione è una funzione che assegna un valore di verità a ciascun e ogni simbolo di $P$.
+
+`esempio di interpretazione`
 
 |     | p   | q   | r   |
 | --- | --- | --- | --- |
@@ -40,8 +43,8 @@ Una interpretazione è una funzione che assegna un valore di verità a ciascun e
 | I3  | F   | T   | F   |
 | I4  | T   | F   | F   |
 | ... |     |     |     |
-*Cosa succede se $P$ è infinito? Ovvero insieme discreto?*
-Il numero d'interpretazioni possibili $2^\infty$
+*Cosa succede se $P$ è infinito*?
+Il numero d'interpretazioni possibili diventerebbe $2^\infty$.
 
 Data un'***interpretazione*** $I$ su $P$, che chiamiamo $G_I$, ha le stesse proprietà di $P$, la funzione porta agli stessi risultati.
 
@@ -53,13 +56,12 @@ Per verificare quello che abbiamo detto fino adesso (*model checking algorithm*)
 
 $$I\models p$$ <center>se e soltanto se $I(p)=T$ e $p\in P$
 
-Se un'interpretazione è sempre vera allora questa si chiama **tautologia**, con valore semantico sempre vero. Ci serve per fare ragionamenti.
+Se un'interpretazione è sempre vera allora questa si chiama **tautologia**, con valore semantico sempre vero. Ci serve per fare ragionamenti. Ci è molto comodo.
 
-$p \to q (p \vee q)$ sarà sempre vera per esempio
+es. $p \to q (p \vee q)$
 
 | $A \to A$              | sempre vera |
 | ---------------------- | ----------- |
 | $\neg A \to (A \to B)$ | sempre vera |
-| ...                    |             |
-
+| ...                    | ...         | 
 
