@@ -8,15 +8,19 @@ del corso di "Informatica" anno 2022/2023
 
 ```
 .
+├── EXERCISES
+│   ├── esempio_tableau_esame_21062022.md
+│   └── esempio_tableau_esame_21062022.pdf
+├── INGSW_INDEX.md
 ├── JAVA
 │   └── helloworld
 │       ├── helloworld.class
 │       └── helloworld.java
 ├── LESSONS
-│   ├── Lesson1 - 19-09 (Introduzione).md
-│   ├── Lesson2 - 20-09 (Concurrent SW).md
-│   └── pdf
+│   ├── Introduzione (deprecato).md
+│   ├── Logica_proposizionale(22-09).md
+│   └── PDF
 │       ├── Lesson1 - 19-09 (Introduzione).pdf
-│       └── Lesson2 - 20-09 (Concurrent SW).pdf
+│       └── Logica_proposizionale(22-09).pdf
 └── README.md
 ```
