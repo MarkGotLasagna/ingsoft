@@ -24,3 +24,5 @@ del corso di "Informatica" anno 2022/2023
 │       └── Logica_proposizionale(22-09).pdf
 └── README.md
 ```
+
+I file che vi interessano sono `.pdf`, gli altri servono piu' a me per il programma che uso per prendere gli appunti (fatta eccezione per i file JAVA).
