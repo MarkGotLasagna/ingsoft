@@ -1,6 +1,6 @@
 [[UNI/ING. SOFTW./README]]
 
 Topic:
-- [[Introduzione]] 19-09
-- [[Concurrent SW]] 20-09
+- [[Introduzione (deprecato)]] 19-09
+- [[Logica_proposizionale(22-09)]] 20-09
 - 
