@@ -69,7 +69,7 @@ con $I$ tale che $I(p)=F$ e $I(q)=T$, allora $I$ è un modello per $A$.
 ![[Pasted image 20220922181214.png|600]]
 
 Per verificare quello che abbiamo detto fino adesso (*model checking algorithm*):
-$$I\models p$$ <center>se e soltanto se $I(p)=T$ e $p\in P$</center>
+$$I\models p$$ se e soltanto se $I(p)=T$ e $p\in P$
 
 ## Tautologia
 Se un'interpretazione è sempre vera allora questa si chiama **tautologia**, con valore semantico sempre vero. Ci serve per fare ragionamenti. Ci è molto comodo siccome siamo indipendenti dalle interpretazioni dimenticandoci i valori semantici.
@@ -146,7 +146,3 @@ avremo percorsi ciclici ma se siamo bravi a gestirli allora riusciremo a complet
 
 ![[Pasted image 20220922121043.png|700]]
 > il nodo è aperto, siamo felici
-
----
-up to: lezione 3 22-09
-last revision: 22-09 19:35
