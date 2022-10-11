@@ -1,5 +1,5 @@
 # Sistemi concorrenti
-#java #processo #thread
+#java #processo #thread #mutex 
 Ogni esecutore, sta eseguendo un *programma concorrente*. 
 Nei casi reali, con condivisione di qualcosa, o i risultati dipendenti dalle computazioni, allora stiamo eseguendo un unico programma concorrente. I *vincoli di sequenzializzazione* sono utili per garantire maggiore qualità all'esecuzione, siccome il SO lavora insieme al nostro programma.
 
@@ -75,3 +75,68 @@ In tutti e 2 i modi, il metodo `run()` contiene sezioni del programma che il thr
 - ...
 
 ## JAVA Memory Model
+Parliamo di JAVA Memory Model perché siamo interessati allo stack: i frame dello stack che identificano le singole chiamate sono isolati.
+I thread di un programma Java quindi:
+- hanno stack privato per singole chiamate;
+- hanno *private thread-local storage*;
+- condividono heap dell'oggetto.
+
+Nel JAVA Memory Model gli oggetti risiedono nell'heap, nei thread stack ci sono le chiamate delle funzioni.
+
+La memoria dell'elaboratore (CPU) è elemento di elaborazioni con registri ad accesso immediato (registers), memoria (cache), connesso a RAM. Il problema delle cache sussiste perché nessuno ci assicura che nella cache, che è condivisa, il processo rimanghi integro (dati replicati). Non ci interessa troppo, però non vogliamo fornire cache alla JVM.
+
+L'esecuzione del thread su CPU multiple causa rilevanti *problemi di coerenza mnemonici*. Possiamo risolvere se l'accesso alla memoria condivisa è controllato, con però l'inevitabile inefficienza di parallelismo e risorse.
+
+### Mutua esclusione
+
+![[Pasted image 20221011095354.png|500]]
+
+Il problema della ==mutua esclusione== sussiste se dato un insieme di sezioni che vogliamo essere mutualmente esclusive, quando un thread entra in una di esse, nessun altro vi può entrare sena un 'pass'.
+Tutti i thread che provano a eseguire, sono in attesa.
+Una volta completata la computazione, il thread esce dalla sezione critica e gli altri possono entrarvi.
+
+Una sezione di codice $M=\{P_1, P_2, \dots , P_N\}$ viene definita per la sezione critica: per esempio, se le sezioni blu sono le sezioni critiche, all'ora all'interno di esse dovrà esserci un solo thread.
+
+Per risolvere il problema usiamo dispositivi a tempo di esecuzione chiamati **mutex** (MUTual EXclusion device), ogni tipologia di mutex ha caratteristiche diverse ma JAVA ce ne fornisce uno e questo viene chiamato **sezione critica**: una porzione di codice che deve garantire mutua esclusione su tutte le parti di codice preferite, in senso astratto possiamo pensarlo come un colore (mutua esclusione tra le sezioni di codice con lo stesso colore).
+
+In JAVA il mutex è un oggetto, se un thread vuole entrare in sezione critica controlla che non ci sia già qualcuno e se è tutto libero, allora vi entra. Acquisizione e rilascio sono:
+- rientranti;
+- sincroni.
+
+![[Pasted image 20221011092125.png|500]]
+
+Nel momento in cui si entra in una sezione condivisa, i dati condivisi vengono bloccati, una volta usciti i dati condivisi assumono il valore aggiornato in tutte le cache. Tutti gli accessi ai dati condivisi devono essere in sezione critica, ma possiamo accedere alla memoria condivisa con parsimonia evitando problemi (aumentando la parallelizzazione). 
+
+Il metodo *esplicito* per dichiarare che una sequenza di codice è critica, è metterlo dentro un blocco con la parola chiave `synchronized`.
+```java
+public void myMethod(Object o) {
+	synchronized(o) {
+		//critical section
+	}
+}
+```
+
+Per definire una sezione critica su metodo invece usiamo il modo *implicito* e va benissimo nel caso il metodo sia privato.
+```java
+public synchronized void myMethod() {
+	//critical section
+}
+```
+
+L'utilizzo di sezioni critiche appesantisce inutilmente il carico sul sistema e sul SO, bisogna usarle con cautela.
+
+#### HAPPENS-BEFORE
+JAVA definisce relazione *happens-before* su operazioni mnemoniche come letture e scritture di varibili condivise. Soltanto se la *write* <u>avviene prima</u> della *read* allora il nostro thread sarà garantito nel vedere le modifiche apportate da un altro.
+
+- uno sblocco/rilascio del mutex *happens-before* lo stesso mutex venghi bloccato/acquisito (le lock vengono messe in coda)
+- la scrittura a un campo `volatile` *happens-before* di una susseguente lettura sullo stesso campo
+	- non garantisce la mutua esclusione
+- una chiamata a `start()` su un thread *happens-before* qualsiasi azione sul thread avviato
+- prima della `join()` tutte le operazioni sono state completate
+
+Tutte le modifiche all'oggetto vengono propagate, siccome l'oggetto ha come parola chiave `synchronized` (i campi `final` siccome non possono essere modificati dopo compilazione, allora non ce ne preoccupiamo).
+
+### Waiting and Notifying Events
+
+---
+2022-10-11

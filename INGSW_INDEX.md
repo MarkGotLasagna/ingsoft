@@ -1,9 +1,10 @@
 [[UNI/ING. SOFTW./README]]
 
+
 Topic:
-- [[Introduzione (deprecato)]]
 - [[Logica_proposizionale]]
 - [[Logica_temporale]]
+- [[Sistemi_concorrenti]]
 
 Exercises:
-- [[esempio_tableau_esame_21062022]]
+[[EXERCISES_INDEX]]
