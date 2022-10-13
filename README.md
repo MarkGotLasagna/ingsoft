@@ -10,18 +10,25 @@ del corso di "Informatica" anno 2022/2023
 .
 ├── EXERCISES
 │   ├── esempio_tableau_esame_21062022.md
-│   └── esempio_tableau_esame_21062022.pdf
+│   ├── EXERCISES_INDEX.md
+│   └── PDF
+│       └── esempio_tableau_esame_21062022.pdf
 ├── INGSW_INDEX.md
 ├── JAVA
-│   └── helloworld
-│       ├── helloworld.class
-│       └── helloworld.java
+│   ├── helloworld
+│   │   ├── helloworld.class
+│   │   └── helloworld.java
+│   ├── ISTRUZIONI_ECLIPSE.md
+│   ├── ISTRUZIONI_ECLIPSE.pdf
+│   └── JAVA_INDEX.md
 ├── LESSONS
-│   ├── Introduzione (deprecato).md
-│   ├── Logica_proposizionale(22-09).md
-│   └── PDF
-│       ├── Lesson1 - 19-09 (Introduzione).pdf
-│       └── Logica_proposizionale(22-09).pdf
+│   ├── Logica_proposizionale.md
+│   ├── Logica_temporale.md
+│   ├── PDF
+│   │   ├── Logica_proposizionale.pdf
+│   │   ├── Logica_temporale.pdf
+│   │   └── Sistemi_concorrenti.pdf
+│   └── Sistemi_concorrenti.md
 └── README.md
 ```
 
