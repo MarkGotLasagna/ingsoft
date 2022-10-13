@@ -72,6 +72,7 @@ In tutti e 2 i modi, il metodo `run()` contiene sezioni del programma che il thr
 #### FUNZIONI
 - `sleep(millis)` con attesa temporizzata che forza il thread ad essere bloccato per un certo quantitativo di tempo
 - `join()` forza il thread ad'essere bloccato e aspetta che colui che l'ha invocato termini
+- `interrupt()` non fa uscire dalla sezione critica, la `wait()` viene sbloccata e inviata una eccezione
 - ...
 
 ## JAVA Memory Model
@@ -137,6 +138,13 @@ JAVA definisce relazione *happens-before* su operazioni mnemoniche come letture 
 Tutte le modifiche all'oggetto vengono propagate, siccome l'oggetto ha come parola chiave `synchronized` (i campi `final` siccome non possono essere modificati dopo compilazione, allora non ce ne preoccupiamo).
 
 ### Waiting and Notifying Events
+Un thread in attesa di eventi, senza che esista un check dello stesso per il controllo di tali eventi, sarà in *busy waiting*, non utilizzerà gli strumenti di programmazione concorrenti che JAVA ha. Noi non lo vogliamo:
+
+Nella <u>sezione critica</u>:
+- i metodi `notify()` e `notifyAll()` possono essere utilizzati all'interno del thread per *notificare a oggetto* `obj`, che un qualche evento è successo. Nel caso di `notifyAll()` vengono risvegliati tutti i thread che erano in attesa (uno solo vi entrerà). Per `notify()` viene risvegliato l'unico thread che cercava di entrare in sezione ciritica. Vengono fornite due funzioni di questo tipo, siccome non vogliamo risvegliare sempre tutti i thread.
+- un thread che necessita di aspettare per eventi usa `wait()` in sezione critica e funziona sullo stesso oggetto `obj` usato per notificare eventi.
+- la `wait(millis)` può essere usata per aspettare non più di tot millisecondi, useremo molto spesso la `wait()` senza argomenti; ogni variante lancia l'eccezione `InterruptedException` se qualche thread interrompe il thread in esecuzione prima o mentre il thread corrente aspettava un evento
+
 
 ---
-2022-10-11
+2022-10-13
