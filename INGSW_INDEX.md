@@ -2,12 +2,12 @@
 
 
 Topic:
-- [[Logica_proposizionale]]
-- [[Logica_temporale]]
-- [[Sistemi_concorrenti]]
+- [[1_LOGICA_PROPOSIZIONALE]]
+- [[2_LOGICA_TEMPORALE]]
+- [[3_SISTEMI_CONCORRENTI]]
 
 JAVA:
-[[ISTRUZIONI_ECLIPSE]]
+[[JAVA_INDEX]]
 
 Exercises:
 [[EXERCISES_INDEX]]
