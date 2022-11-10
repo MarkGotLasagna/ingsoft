@@ -1,0 +1,21 @@
+package it.unipr.informatica.example01;
+
+// NOTA SULLA NOMENCLATURA
+// tenere a mente che le classi avranno sempre nome con la Maiuscola
+// i metodi sono sempre in minuscolo
+
+// creiamo una nuova classe sempre all'interno del package
+public class Notifier extends Thread {
+	// è buona norma scrivere @Override perché esiste già un metodo col nome run()
+	// a noi serve ridefinirlo e quindi lo scriviamo
+	@Override
+	public void run() {
+		System.out.println("Started thread");
+		
+		// in questo punto, il thread viene messo in stato 'bloccato' per almeno 2sec
+		// almeno 2 secondi vengono garantiti
+		Thread.sleep(2000);
+		
+		System.out.println("Terminated thread");
+	}
+}
