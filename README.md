@@ -44,4 +44,4 @@ Se esportate i file `MARKDOWN` all'interno del vostro vault [Obsidian.md](https:
 
 I file a nome `_INDEX.md` sono utili per generare i grafi, se usate Obsidian.md vi conviene importare anche quelli.
 
-![Graph view of 'basi'](https://github.com/MarkGotLasagna/ingsw/blob/main/PICS/graph_view.png)
+![Graph view of 'basi'](https://github.com/MarkGotLasagna/ingsoft/blob/main/PICS/graph_view.png)
