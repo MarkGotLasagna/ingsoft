@@ -1,4 +1,4 @@
-# **Ingegneria del Software** 2022/2023
+# Ingegneria del Software 2022/2023
 
 <div align=center>
 	<image src=https://shields.io/badge/Eclipse-black?logo=eclipse&style=plastic></image>
@@ -38,7 +38,7 @@ Documents/Obsidian Vault/UNI/ING. SOFTW.
 **Le sottocartelle a nome `PDF` sono quelle contenenti i file esportati**, sono i file che vi interessano:
 - **appunti** di teoria li trovate nella cartella `LESSONS`;
 - **esercizi** tableau e simili nella cartella `EXERCISES`;
-- i **programmi JAVA** sono nella cartella `JAVA`, al suo interno trovate l'intero workspace Eclipse che se volete potete semplicemente scaricare e usare come vostro. I commenti sul codice sono numerati, minimali sul sorgente, dettagliati nella cartella `PDF`.
+- i **programmi JAVA** sono nella cartella `JAVA`, al suo interno trovate l'intero workspace Eclipse che se volete potete semplicemente scaricare e usare come vostro. I commenti sul codice sono numerati, minimali sulla sorgente, dettagliati nella cartella `PDF`. Trovate anche una guida comprensiva su come impostare il workspace su Eclipse.
 
 Se esportate i file `MARKDOWN` all'interno del vostro vault [Obsidian.md](https://obsidian.md/) otterrete risultati migliori, perché noterete che negli appunti ci sono troncamenti di pagina non voluti.
 
