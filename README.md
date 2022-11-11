@@ -50,6 +50,5 @@ I file a nome `_INDEX.md` sono utili per generare i grafi, se usate Obsidian.md 
 Repository di persone che stanno/hanno seguito il corso sono esistenti e incoraggio a dare un'occhiata siccome più complete di questa.
 
 - Tommaso Pellegrini
-  https://github.com/netpawn/ISW_Java_Concurrency
-  
-  https://github.com/netpawn/GoF_DPs_Java_Examples
+  - https://github.com/netpawn/ISW_Java_Concurrency
+  - https://github.com/netpawn/GoF_DPs_Java_Examples
