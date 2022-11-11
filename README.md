@@ -45,3 +45,10 @@ Se esportate i file `MARKDOWN` all'interno del vostro vault [Obsidian.md](https:
 I file a nome `_INDEX.md` sono utili per generare i grafi, se usate Obsidian.md vi conviene importare anche quelli.
 
 ![Graph view of 'basi'](https://github.com/MarkGotLasagna/ingsoft/blob/main/PICS/graph_view.png)
+
+## Similar repos
+Repository di persone che stanno/hanno seguito il corso sono esistenti e incoraggio a dare un'occhiata siccome più complete di questa.
+
+- Tommaso Pellegrini
+  https://github.com/netpawn/ISW_Java_Concurrency
+  https://github.com/netpawn/GoF_DPs_Java_Examples
