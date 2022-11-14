@@ -1,8 +1,8 @@
 $\mathtt{NOTA\ SUL\ CODICE}$
 Le lezioni sugli esempi di programmazione in JAVA saranno d'ora in avanti così annotate:
 - ciascuna parte di codice di rilevanza, verrà qui discussa nel dettaglio;
-- la discussione sul codice è presa dalle lezioni in presenza/registrazioni, potete verificare così la veridicità;
-- il codice finale (nella cartella `JAVA/eclipse-workspace/Example/src`) potrebbe non essere lo stesso codice che riscontrate qui. Tuttavia non vi perdete nulla siccome commenterò anche quello.
+- la discussione sul codice è presa dalle lezioni in presenza/registrazioni, potete verificarne così la veridicità;
+- il codice finale (nella cartella `JAVA/eclipse-workspace/Example/src`) potrebbe non essere lo stesso codice che riscontrate qui. Tuttavia non vi perdete nulla siccome discuterò anche quello.
 
 ---
 
@@ -37,7 +37,7 @@ Abbiamo visto la costruzione dei thread in JAVA (estendendo `Thread` o implement
 - un thread *Waiter* rimane in attesa aspettando la notifica di un altro;
 - un thread *Notifier* dopo un'attesa di tot secondi randomica, notifica con `notifyAll()`.
 
-Usando Eclipse clicchiamo col tasto destro sul nostro file `Example01` e creiamo una nuova classe con `New > Class` chiamandola *Notifier*.
+Usando Eclipse clicchiamo col tasto destro sul nostro package `it.unipr.informatica.example01` e creiamo una nuova classe con `New > Class` chiamandola *Notifier*.
 
 ![[Pasted image 20221111070054.png|500]]
 
@@ -295,17 +295,18 @@ Seguiamo questo ragionamento per identificarlo (vedi commenti in alto numerati):
 
 Niente ci garantisce che la `NotifyAll()` venga fatta dopo la `wait()`.
 Potrebbe succedere, anche se poco probabile nel caso di 5 secondi di attesa, che i due thread partano ma senza l'ordine da noi voluto.
+[[#Soluzione al problema di sincronizzazione]]
 
 ## Esemplificazione del codice
 ```mermaid
 flowchart LR
-	e[Example01]
-	g[go]
-	r[notifier.run]
-	ru[waiter.run]
-	e -- chiama --> g
-	g -- chiama --> r
-	g -- chiama --> ru
+	e["Example01.java"]
+	g["go( )"]
+	r["notifier.run( )"]
+	ru["waiter.run( )"]
+	e -- calls --> g
+	g -- calls --> r
+	g -- calls --> ru
 ```
 
 Sarebbe utile semplificare il codice.
@@ -414,7 +415,7 @@ package it.unipr.informatica.example;
 public class Example01 {
 	// creiamo mutex condiviso
 	private Object mutex = new Object();
-	// creiamo una barriera per controllare se siamo in wait o no
+	// creiamo un controllo: siamo in wait o no?
 	private boolean waitInProgress = false;
 	
 	public void go() {
