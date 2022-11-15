@@ -4,11 +4,29 @@ $\mathtt{NOTE}$
 
 ---
 
+<center>Table of contents</center>
+
+- [[#Astrazioni di alto livello]]
+	- [[#`Concurrency`]]
+		- [[#`BlockingQueue.java`]]
+		- [[#`LinkedBlockingQueue.java`]]
+			- [[#`put()`]]
+			- [[#`take()`]]
+			- [[#`remainingCapacity()`]]
+			- [[#`isEmpty()`]]
+			- [[#`clear()`]]
+	- [[#`Example02`]]
+		- [[#`Producer.java`]]
+		- [[#`Consumer.java`]]
+		- [[#`Example02.java`]]
+
 # Astrazioni di alto livello
 In una versione semplice di quello che abbiamo visto in [[Example01]], il livello di astrazione in cui separavamo `Notifier` e `Waiter` non era molto alto.
 Programmare vicino alla macchina, vicino al SO, ha vantaggio se quello che andiamo a fare è critico, causa quantità risorse di calcolo elevate, non lo è tuttavia sempre.
 
 JAVA permette di affrontare problemi di concorrenza fornendo **astrazioni** di *alto livello*, perché non possiamo sempre pensare a risolvere problemi di sincronizzazione. Ci serve qualcosa abbastanza generale da poter usare spesso, che sfrutti bene il sistema a disposizione e che permetta al nostro software di acquisire nuove funzionalità.
+
+![[Pasted image 20221115072107.png]]
 
 ## `Concurrency`
 ### `BlockingQueue.java`
@@ -187,25 +205,23 @@ La distruzione non avviene veramente, dovremmo mettere a `NULL` il riferimento a
 
 ## `Example02`
 ### `Producer.java`
+>[!example] `Producer.java`
 ```java
 package it.unipr.informatica.examples;
 
 import it.unipr.informatica.concurrent.BlockingQueue;
 
 public class Producer implements Runnable {
+	// id >= 0
 	private int id;
-	
+	// in ingresso
 	private BlockingQueue<String> queue;
-	
 	public Producer(int id, BlockingQueue<String> queue) {
 		if (id < 0)
 			throw new IllegalArgumentException("id < 0");
-			
 		if (queue == null)
 			throw new IllegalArgumentException("queue == null");
-			
 		this.id = id;
-		
 		this.queue = queue;
 	}
 	
@@ -217,12 +233,100 @@ public class Producer implements Runnable {
 				System.out.println("P" + id + " sending" + message);
 				queue.put(message);
 				System.out.println("P" + id + " sent" + message);
+				// attesa tra 100ms a 150ms
 				Thread.sleep(100 + (int) (50 * Math.random()));
 			}
 		} catch (InterruptedException interrupted) {
-			System.err.println(Thread.currentThread().getName() 
-				+ " interrupted");
+			System.err.println("Producer " + id + " interrupted");
 		}
 	}
 }
 ```
+Ciascun thread ha il compito di *produrre* 5 messaggi ciascuno e di fornirli per essere letti dal consumer.
+### `Consumer.java`
+> [!example] `Consumer.java`
+```java
+package it.unipr.informatica.examples;
+
+import it.unipr.informatica.concurrent.BlockingQueue;
+
+public class Producer implements Runnable {
+	// id >= 0
+	private int id;
+	// in ingresso
+	private BlockingQueue<String> queue;
+	public Producer(int id, BlockingQueue<String> queue) {
+		if (id < 0)
+			throw new IllegalArgumentException("id < 0");
+		if (queue == null)
+			throw new IllegalArgumentException("queue == null");
+		this.id = id;
+		this.queue = queue;
+	}
+	
+	@Override
+	public void run() {
+		try {
+			for (int i = 0; i<5; ++i) {
+				String message = queue.take();
+				System.out.println("C" + id + 
+					" received " + message);
+				Thread.sleep(100 + (int) (50 * Math.random()));
+			}
+		} catch (InterruptedException interrupted) {
+			System.err.println("Consumer " + id + " terminated");
+		}
+	}
+}
+```
+Ciascun thread ha il compito di *consumare* 5 messaggi, prodotti da un producer.
+### `Example02.java`
+>[!example] `Example02.java`
+```java
+package it.unipr.informatica.examples;
+
+import it.unipr.informatica.concurrent.BlockingQeueue;
+
+puclic class Example02 {
+	private void go() {
+		BlockingQueue<String> queue = new LinkedBlockingQueue<>();
+		// costruisce e attiva i 5 consumer
+		for (int i=0; i<5; ++i) {
+			Consumer consumer = new Consumer(i, queue);
+			new Thread(consumer).start();
+		}
+		// costruisce e attiva i 5 producer
+		for (int i=0; i<5; ++i) {
+			Producer producer = new Producer(i, queue);
+			new Thread(producer).start();
+		}
+	}
+	
+	public static void main(String[] args) {
+		new Example02().go();
+	}
+}
+```
+Avvia i 5 consumer e 5 producer, per un totale di 25 stampe su std:out.
+Notare che i messaggi vengono stampati non per ordine, ma in confusione.
+
+![[Pasted image 20221115071307.png|500]]
+
+> [!note] Cosa succede se ci sono più *consumer* che *producer*?
+> Se modificassimo il codice del [[#`Consumer.java`]] in modo che prenda invece che 5, 6 messaggi da consumare
+>
+>```java
+>// ...
+>public void go() {
+>	try {
+>		for(int i=0; i < 6; ++i) {
+>			String message = queue.take();
+>			// ...
+>		}
+>	}
+>}
+>```
+>
+ >allora la nostra JVM non terminerà mai, siccome non ci saranno mai a disposizione i messaggi a sufficienza per i consumer, che rimarranno in attesa indefinitivamente.
+>
+ >![[Pasted image 20221115071702.png]]
