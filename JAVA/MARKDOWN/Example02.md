@@ -91,11 +91,16 @@ public interface BlockingQueue<T> {
 ```
 
 ### `LinkedBlockingQueue.java`
+Implementa l'interfaccia che abbiamo visto sopra.
+
+[LinkedBlockingQueue documetnation Oracle](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/LinkedBlockingQueue.html)
+
 > [!example] `LinkedBlockingQueue.java`
 ```java
 package it.unipr.informatica.concurrent;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public final class LinkedBlockingQueue<T> 
 	implements BlockingQueue<T> {
@@ -122,7 +127,7 @@ public final class LinkedBlockingQueue<T>
 			synchronized (queue) {
 				queue.addLast(object);
 			if (queue.size() == 1)
-				queue.notify();
+			queue.notify();
 			}
 		}
 		
@@ -136,6 +141,13 @@ public final class LinkedBlockingQueue<T>
 		@Override
 		public int remainingCapacity() {
 			return Integer.MAX_VALUE;
+		}
+		
+		@Override
+		public void clear() {
+			synchronized (queue) {
+				queue.clear();
+			}
 		}
 }
 ```
@@ -250,12 +262,10 @@ package it.unipr.informatica.examples;
 
 import it.unipr.informatica.concurrent.BlockingQueue;
 
-public class Producer implements Runnable {
-	// id >= 0
+public class Consumer implements Runnable {
 	private int id;
-	// in ingresso
 	private BlockingQueue<String> queue;
-	public Producer(int id, BlockingQueue<String> queue) {
+	public Consumer(int id, BlockingQueue<String> queue) {
 		if (id < 0)
 			throw new IllegalArgumentException("id < 0");
 		if (queue == null)
@@ -267,14 +277,15 @@ public class Producer implements Runnable {
 	@Override
 	public void run() {
 		try {
-			for (int i = 0; i<5; ++i) {
-				String message = queue.take();
-				System.out.println("C" + id + 
-					" received " + message);
-				Thread.sleep(100 + (int) (50 * Math.random()));
+			for(int i=0; i<5; ++i) {
+				String message = id + "/" + i;
+				System.out.println("P" + id + " sending" + message);
+				queue.put(message);
+				System.out.println("P" + id + " sent" + message);
+				Thread.sleep(100 + (int) (50*Math.random()));
 			}
-		} catch (InterruptedException interrupted) {
-			System.err.println("Consumer " + id + " terminated");
+		} catch(InterruptedException interrupted) {
+			System.err.println("Producer" + id + " interrupted");
 		}
 	}
 }
@@ -287,7 +298,7 @@ package it.unipr.informatica.examples;
 
 import it.unipr.informatica.concurrent.BlockingQeueue;
 
-puclic class Example02 {
+public class Example02 {
 	private void go() {
 		BlockingQueue<String> queue = new LinkedBlockingQueue<>();
 		// costruisce e attiva i 5 consumer
