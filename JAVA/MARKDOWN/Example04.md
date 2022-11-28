@@ -10,6 +10,8 @@ Operazioni fornite sono:
 - interfaccia funzionale $f(R)$ che ritorna $f(R)$.
 
 ## `AtomicReference.java`
+Costruiamo una classe con argomento generico `<T>`, un oggetto su cui faremo le sezioni critiche e poi un valore reference che prendiamo dall'esterno.
+
 ```java
 package it.unipr.informatica.concurrent.atomic;
 import java.util.function.UnaryOperator;
@@ -18,6 +20,7 @@ public class AtomicReference<T> {
 	private T value;
 	private Object lock;
 	
+	// costruttore che fa riferimento ad un altro
 	public AtomicReference() {
 		this(null);
 	}
@@ -26,20 +29,36 @@ public class AtomicReference<T> {
 		this.value = value;
 		this.lock = new Object();
 	}
-	
+	//...
+```
+
+La `get()` costruisce la sezione critica e ritorna il valore.
+Va a fare la deference.
+```java
+	//...
 	// equivalente all'operatore di deference
 	public T get() {
 		synchronized(lock) {
 			return value;
 		}
 	}
-	
+	//...
+```
+
+La `set()` prende un riferimento a un valore di tipo `T`, blocca la sezione critica entra e scrive.
+```java
+	//...
 	public void set(T value) {
 		synchronized(lock) {
 			this.value = value;
 		}
 	}
-	
+	//...
+```
+
+Prende la sezione critica su `lock`, sovrascrive il valore di `value` e ritorna il valore vecchio prima dell'aggiornamento.
+```java
+	//...
 	public T getAndSet(T value) {
 		synchronized(lock) {
 			result = this.value;
@@ -47,7 +66,13 @@ public class AtomicReference<T> {
 			return result;
 		}
 	}
-	
+	//...
+```
+
+`UnaryOperator` ha interfaccia con un metodo con argomento tipo `T` ritornante tipo `T`. Interfaccia funzionale standard con un unico metodo: `apply()`.
+Prima leggiamo il valore di `value` e lo ritorniamo quando è il momento.
+```java
+	//...
 	public T getAndUpdate(UnaryOperator<T> update) {
 		synchronized(lock) {
 			T result = value;
@@ -55,15 +80,25 @@ public class AtomicReference<T> {
 			return result;
 		}
 	}
-	
+	//...
+```
+
+Prima applica la funzione $f()$ e poi ritorna il risultato $R$.
+```java
+	//...
 	public T updateAndGet(UnaryOperator<T> ) {
-		
+		synchronized(lock) {
+			T result = update.apply(value);
+			this.value = result;
+			return result;
+		}
 	}
 }
 ```
 
 # Example04
 ## `Example04.java`
+
 ```java
 package it.unipr.informatica.examples;
 
@@ -121,3 +156,4 @@ public class Example04 {
 }
 ```
 
+![[Pasted image 20221125130129.png]]
