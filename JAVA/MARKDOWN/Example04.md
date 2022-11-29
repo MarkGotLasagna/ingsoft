@@ -1,3 +1,11 @@
+
+<center>Table of contents</center>
+
+- [[#Atomic references]]
+	- [[#`AtomicReference.java`]]
+- [[#Example04]]
+	- [[#`Example04.java`]]
+
 # Atomic references
 Alcune volte la mutua esclusione ci basta per risolvere tutti i problemi di sincronizzazione che dobbiamo affrontare. Con le **reference atomiche** verifichiamo il valore di una reference in mutua eclusione, oppure facciamo letture/scritture sul reference garantendo la mutua esclusione.
 Operazioni fornite sono:
