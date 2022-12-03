@@ -46,6 +46,23 @@ I file a nome `_INDEX.md` sono utili per generare i grafi, se usate Obsidian.md 
 
 ![Graph view of 'basi'](https://github.com/MarkGotLasagna/ingsoft/blob/main/PICS/graph_view.png)
 
+Trovate l'insieme degli snippets CSS all'interno della repo [.dots](https://github.com/MarkGotLasagna/.dots/tree/main/Documents/Obsidian%20Vault/.obsidian/snippets).
+Lista di plugins utilizzati:
+```
+Documents/Obsidian Vault/.obsidian/plugins
+├── cm-editor-syntax-highlight-obsidian
+├── cmenu-plugin
+├── highlightr-plugin
+├── obsidian-admonition
+├── obsidian-emoji-toolbar
+├── obsidian-functionplot
+├── obsidian-icon-folder
+├── obsidian-languagetool-plugin
+├── obsidian-pandoc
+├── obsidian-tikzjax
+└── table-editor-obsidian
+```
+
 ## Similar repos
 Repository di persone che stanno/hanno seguito il corso sono esistenti e incoraggio a dare un'occhiata siccome più complete di questa.
 
