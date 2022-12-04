@@ -40,23 +40,31 @@ Documents/Obsidian Vault/UNI/ING. SOFTW.
 - **esercizi** tableau e simili nella cartella `EXERCISES`;
 - i **programmi JAVA** sono nella cartella `JAVA`, al suo interno trovate l'intero workspace Eclipse che se volete potete semplicemente scaricare e usare come vostro. I commenti sul codice sono numerati, minimali sulla sorgente, dettagliati nella cartella `PDF`. Trovate anche una guida comprensiva su come impostare il workspace su Eclipse.
 
-Se esportate i file `MARKDOWN` all'interno del vostro vault [Obsidian.md](https://obsidian.md/) otterrete risultati migliori, perché noterete che negli appunti ci sono troncamenti di pagina non voluti.
+Per installare soltanto i file PDF:
+```
+git clone --filter=blob:none --depth 1 --sparse https://github.com/MarkGotLasagna/ingsoft && \
+    cd ingsoft && \
+    git sparse-checkout init --cone && \
+    git sparse-checkout set EXERCISES/PDF JAVA/PDF LESSONS/PDF
+```
 
-I file a nome `_INDEX.md` sono utili per generare i grafi, se usate Obsidian.md vi conviene importare anche quelli.
-
-![Graph view of 'basi'](https://github.com/MarkGotLasagna/ingsoft/blob/main/PICS/graph_view.png)
+<p align="center">
+  <img src="/PICS/graph_view.png" width="50%" alt="Graph view">
+</p>
 
 Trovate l'insieme degli snippets CSS all'interno della repo [.dots](https://github.com/MarkGotLasagna/.dots).
 Lista di plugins utilizzati:
 ```
-Documents/Obsidian Vault/.obsidian/plugins
+/home/maruko/Documents/Obsidian Vault/.obsidian/plugins
 ├── cm-editor-syntax-highlight-obsidian
 ├── cmenu-plugin
 ├── highlightr-plugin
 ├── obsidian-admonition
+├── obsidian-dynamic-toc
 ├── obsidian-emoji-toolbar
 ├── obsidian-functionplot
 ├── obsidian-icon-folder
+├── obsidian-icons-plugin
 ├── obsidian-languagetool-plugin
 ├── obsidian-pandoc
 ├── obsidian-tikzjax
