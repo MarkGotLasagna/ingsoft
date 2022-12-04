@@ -1,6 +1,0 @@
-INDEX VERSION 1.131+/home/maruko/Documents/Obsidian Vault/UNI/ING. SOFTW./JAVA/eclipse-workspace/.metadata/.plugins/org.eclipse.jdt.core
-4268253535.index
-1865797976.index
-3873681301.index
-3545544117.index
-1734422757.index
