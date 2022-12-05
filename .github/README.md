@@ -78,18 +78,14 @@ Repository di persone che stanno/hanno seguito il corso sono esistenti e incorag
   - https://github.com/netpawn/ISW_Java_Concurrency
   - https://github.com/netpawn/GoF_DPs_Java_Examples
 
-## Sponsor
+## Funding
 
 <p align="center" style="border-radius:25px;">
   <img src="/PICS/tip-jar-paypal.jpg" width="25%" alt="PayPal QR">
+  <img src="/PICS/tip-ko_fi.png" width="25%" alt="Ko-fi pic">
 </p>
 
 Gli appunti sono **gratuiti**. Ritengo che l'*informazione debba essere gratuita, per tutti*.
 
-Mi e' stato tuttavia comunicato che attivare un link per le donazioni, sia consono per incentivare il lavoro. Nonostante l'incentivo lo trovi a prescindere, siccome vorrei laurearmi, ho deciso d'imbarcarmi al consiglio.
-
-Il codice QR sopra, riporta alla *jar* PayPal per le donazioni.
-
-Alternativamente potete cliccare l'icona a forma di cuore, in cima alla pagina, per usare un *link* diretto.
-
-*Grazie*.
+Se volete lasciare una *tip* avete 2 opzioni.
+I link diretti in cima alla pagina, all'icona forma di cuore.
