@@ -3,6 +3,7 @@
 <div align=center>
 	<image src=https://shields.io/badge/Eclipse-black?logo=eclipse&style=plastic></image>
 	<image src=https://shields.io/badge/arch-black?logo=archlinux&style=plastic></image>
+	<image src=https://img.shields.io/github/stars/MarkGotLasagna/ingsoft?style=social></image>
 </div>
 
 del corso di Laurea in Informatica 'Ottobre 2022 - Gennaio 2023'.
