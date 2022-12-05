@@ -81,11 +81,10 @@ Repository di persone che stanno/hanno seguito il corso sono esistenti e incorag
 ## Funding
 
 <p align="center" style="border-radius:25px;">
-  <img src="/PICS/tip-jar-paypal.jpg" width="25%" alt="PayPal QR">
+  <img src="/PICS/tip-jar-paypal.jpg" width="25%" alt="PayPal QR"></br>
   <img src="/PICS/tip-ko_fi.png" width="25%" alt="Ko-fi pic">
 </p>
 
-Gli appunti sono **gratuiti**. Ritengo che l'*informazione debba essere gratuita, per tutti*.
+Donazioni vanno ai link [PayPal.me](https://paypal.me/MarcoRondelli?country.x=IT&locale.x=it_IT) oppure [Ko-fi](https://ko-fi.com/markgotlasagna). </br>Potete in alternativa cliccare i link a destra della dashboard, oppure in alto, all'icona a forma di cuore.
 
-Se volete lasciare una *tip* avete 2 opzioni.
-I link diretti in cima alla pagina, all'icona forma di cuore.
+Gli appunti rimarranno sempre e comunque *gratuiti*.
