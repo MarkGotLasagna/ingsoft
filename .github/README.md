@@ -77,8 +77,3 @@ Repository di persone che stanno/hanno seguito il corso sono esistenti e incorag
   - https://github.com/netpawn/ISW_Java_Concurrency
   - https://github.com/netpawn/GoF_DPs_Java_Examples
 
-## Funding
-
-<p align="center" style="border-radius:25px;">
-  <img src="/PICS/full.png.png" width="50%" alt="PayPal QR"></br>
-</p>
