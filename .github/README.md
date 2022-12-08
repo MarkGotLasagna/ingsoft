@@ -30,7 +30,6 @@ Documents/Obsidian Vault/UNI/ING. SOFTW.
 │   ├── MARKDOWN
 │   └── PDF
 ├── JAVA
-│   ├── eclipse-workspace
 │   ├── MARKDOWN
 │   └── PDF
 └── LESSONS
