@@ -1,6 +1,6 @@
 # Dynamic Proxies
 Nell'esempio [[Example09]] abbiamo visto l'invocazione dinamica dei metodi, la possibilita' di usare il package `java.lang.Reflect` per, non solo descrivere le classi di cui conosciamo i descrittori, ma anche per invocare codice.
-ciao
+
 Se abbiamo a disposizione un insieme d'interfacce, che definiscono un insieme di metodi da poter invocare, non e' necessario avere a disposizione una classe che implementi queste, per avere oggetti.
 
 Dato un array di descrittori $a$, un *dynamic proxy* e' un oggetto che implementa l'interfaccia in $a$ e invoca il codice utente se necessario. Viene costruito un oggetto nell'interfaccia ma non nell'implementazione.
