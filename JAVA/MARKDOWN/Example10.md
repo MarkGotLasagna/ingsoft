@@ -86,3 +86,5 @@ public class Example10 {
 	}
 	//...
 ```
+
+ciao maruko senpai
