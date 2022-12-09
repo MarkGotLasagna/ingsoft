@@ -1,3 +1,9 @@
+
+<center>Table of contents</center>
+
+```toc
+```
+
 # Dynamic Proxies
 Nell'esempio [[Example09]] abbiamo visto l'invocazione dinamica dei metodi, la possibilita' di usare il package `java.lang.Reflect` per, non solo descrivere le classi di cui conosciamo i descrittori, ma anche per invocare codice.
 
@@ -61,6 +67,11 @@ Il `main()` fa quello che fa sempre, crea `Example10` ed esegue la sua `go()`.
 }
 ```
 
+> [!warning] `student` non e' un oggetto fatto particolarmente bene
+> `System.out.println(student.toString())` non possiamo farlo, siccome sta a noi se implementare o meno i metodi di `Object`.
+> 
+> ![[Pasted image 20221206174903.png|450]]
+
 ```java
 package it.unipr.informatica.examples;
 import java.lang.reflect.Method;
@@ -86,3 +97,8 @@ public class Example10 {
 	}
 	//...
 ```
+![[Pasted image 20221206173909.png]]
+Siccome adesso non ho piu' la classe, dove va messo lo stato dell'oggetto?
+Possiamo metterlo dove vogliamo, ad esempio in qualche oggetto, da qualche parte nello stack (non permanente), basta ci sia un posto.
+Noi useremo l'invokation handler come posto per lo stato, che non e' una soluzione bellissima siccome tutti quelli che lo hanno, avranno stato uguale.
+
