@@ -1,6 +1,3 @@
-
-<center>Table of contents</center>
-
 ```toc
 ```
 
@@ -97,10 +94,8 @@ public class Example10 {
 	}
 	//...
 ```
-<<<<<<< HEAD
+
 ![[Pasted image 20221206173909.png]]
 Siccome adesso non ho piu' la classe, dove va messo lo stato dell'oggetto?
 Possiamo metterlo dove vogliamo, ad esempio in qualche oggetto, da qualche parte nello stack (non permanente), basta ci sia un posto.
 Noi useremo l'invokation handler come posto per lo stato, che non e' una soluzione bellissima siccome tutti quelli che lo hanno, avranno stato uguale.
-
-ciao maruko senpai

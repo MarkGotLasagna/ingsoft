@@ -1,6 +1,3 @@
-
-<center>Table of contents</center>
-
 ```toc
 ```
 
