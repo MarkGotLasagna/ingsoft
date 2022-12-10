@@ -40,7 +40,7 @@ Documents/Obsidian Vault/UNI/ING. SOFTW.
 **Le sottocartelle a nome `PDF` sono quelle contenenti i file esportati**, sono i file che vi interessano:
 - **appunti** di teoria li trovate nella cartella `LESSONS`;
 - **esercizi** tableau e simili nella cartella `EXERCISES`;
-- i **programmi JAVA** sono nella cartella `JAVA`, al suo interno trovate l'intero workspace Eclipse che se volete potete semplicemente scaricare e usare come vostro. I commenti sul codice sono numerati, minimali sulla sorgente, dettagliati nella cartella `PDF`. Trovate anche una guida comprensiva su come impostare il workspace su Eclipse.
+- i **programmi JAVA** sono nella cartella `JAVA`. I commenti sul codice sono numerati, minimali sulla sorgente, dettagliati nella cartella `PDF`. Trovate anche una guida comprensiva su come impostare il workspace su Eclipse.
 
 Per installare soltanto i file PDF:
 ```
