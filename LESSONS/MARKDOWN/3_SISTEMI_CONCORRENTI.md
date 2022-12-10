@@ -1,5 +1,6 @@
+```toc
+```
 # Sistemi concorrenti
-#java #processo #thread #mutex 
 Ogni esecutore, sta eseguendo un *programma concorrente*. 
 Nei casi reali, con condivisione di qualcosa, o i risultati dipendenti dalle computazioni, allora stiamo eseguendo un unico programma concorrente. I *vincoli di sequenzializzazione* sono utili per garantire maggiore qualità all'esecuzione, siccome il SO lavora insieme al nostro programma.
 
@@ -67,7 +68,7 @@ Usiamo il paradigma ad oggetti tipico, permettendoci di manipolare i thread face
 
 In tutti e 2 i modi, il metodo `run()` contiene sezioni del programma che il thread esegue. `start()` viene usata per eseguire la `run()`.
 
-![[Pasted image 20221006115930.png|600]]
+![[Pasted image 20221006115930.png|500]]
 
 #### FUNZIONI
 - `sleep(millis)` con attesa temporizzata che forza il thread ad essere bloccato per un certo quantitativo di tempo
@@ -144,7 +145,3 @@ Nella <u>sezione critica</u>:
 - i metodi `notify()` e `notifyAll()` possono essere utilizzati all'interno del thread per *notificare a oggetto* `obj`, che un qualche evento è successo. Nel caso di `notifyAll()` vengono risvegliati tutti i thread che erano in attesa (uno solo vi entrerà). Per `notify()` viene risvegliato l'unico thread che cercava di entrare in sezione ciritica. Vengono fornite due funzioni di questo tipo, siccome non vogliamo risvegliare sempre tutti i thread.
 - un thread che necessita di aspettare per eventi usa `wait()` in sezione critica e funziona sullo stesso oggetto `obj` usato per notificare eventi.
 - la `wait(millis)` può essere usata per aspettare non più di tot millisecondi, useremo molto spesso la `wait()` senza argomenti; ogni variante lancia l'eccezione `InterruptedException` se qualche thread interrompe il thread in esecuzione prima o mentre il thread corrente aspettava un evento
-
-
----
-2022-10-13

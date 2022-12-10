@@ -1,26 +1,26 @@
+```toc
+```
 # Logica temporale
-#logica-temporale #ltl #ctl #loop-rule
-
 Se immaginiamo un'affermazione di un sistema software che cambi nel tempo, vuole dire che la sua interpretazione cambia nel tempo.
 Nella logica classica a ogni proposizione viene assegnata una *singola* verità statica, nella logica **temporale** consideriamo invece i **mondi**.
 
-Nel mondo di oggi = ✅ TRUE
-Nel mondo di domani = ❌ FALSE
+Nel mondo di oggi = <mark style="background: #BBFABBA6;">`fas:Check` TRUE</mark>
+Nel mondo di domani = <mark style="background: #FF5582A6;">`fas:Times` FALSE</mark>
 
 Nell'istante di tempo che noi stiamo considerando, avremo un cambiamento dello stato. Dato un mondo avremo un *insieme* di mondi possibili.
 
 Normalmente le proprietà dei sistemi software sono studiate usando logiche temporali e sono raggruppate in 3 categorie:
 - <u>safety</u>, per garantire che il sistema viva sempre a tempo indefinito, senza problemi di alcun tipo (esempio negativo: bug)
   > [!example]
-  > $G \neg (temperature > 100)$
+  > $G \neg (\mathtt{temperature} > 100)$
   > La temperatura rimane sopra i 100 gradi
 - <u>liveness</u>, se c'è un processo, esso avrà modo di fare qualcosa (esempio negativo: deadlock)
   > [!example]
-  > $G(started \to Fterminated)$
+  > $G(\mathtt{started} \to F\mathtt{terminated})$
   > Prima o poi, dopo essere partito, il processo terminerà
 - (strong) <u>fairness</u>, se qualcosa viene richiesto infinite volte, allora verrà fatto infinite volte (esempio negativo: starving)
   > [!example]
-  > $GFready \to GFexecute$
+  > $GF\mathtt{ready} \to GF\mathtt{execute}$
   > Prima o poi la computazione che sta richiedendo, verrà fatta
 
 ![[Pasted image 20221004095317.png|]]
@@ -78,8 +78,7 @@ All'espansione poi sopraggiungono gli operatori temporali:
 - $S \cup \{FA\}$ aggiungiamo 2 nodi figli $S \cup \{A\}$ e $S \cup \{XFA\}$;
 - $S \cup \{AUB\}$ aggiungiamo 2 nodi figli $S \cup \{B\}$ e $S \cup \{A, X(AUB)\}$.
 
-
-#### loop rule
+#### Loop rule
 La **regola di loop** serve per applicare da un tableau in formule negate:
 - se abbiamo una foglia etichettata con letterali LTL e proposizioni strutturate come $XP$ per qualche $P$ allora:
 	- prendiamo tutti gli argomenti di $X$ e controlliamo che esista un nodo contenente questi argomenti, che significa tornare indietro in un loop e quindi terminiamo
@@ -121,12 +120,11 @@ stateDiagram-v2
 	!done --> !done
 	!done --> [*]
 ```
-## computational tree logic\* (CTL*)
+## Computational tree logic\* (CTL*)
 Permette due tipi di proposizioni:
 - stati proposizionali
 - percorsi proposizionali
 
-#modelling #kripke
 ## Sistema concorrente reattivo asincrono
 Un *sistema* che è in attesa di eventi, interagisce con l'ambiente e non dovrebbe terminare. Parliamo di un sistema *concorrente asincrono (agente)*, sistema di quelli di cui facciamo riferimento perché quelli oggi usati. Possiamo dire che, in un istante di tempo 1 solo thread è in esecuione, quando in verità possono essere molteplici.
 
@@ -192,7 +190,3 @@ flowchart TB
 	style 2 fill:green
 	style 3 fill:green
 ```
-
-
----
-lezione: 10-04

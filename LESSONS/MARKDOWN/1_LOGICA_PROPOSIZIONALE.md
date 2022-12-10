@@ -1,6 +1,6 @@
+```toc
+```
 # I sistemi concorrenti
-#linguaggio-formale #linguaggio-logico #logica #interpretazione #tautologia #contraddizione #de-morgan #contrapposizione #tableaux
-
 Lo studio dei sistemi concorrenti dal punto di vista matematico facilita lo studio dello stesso. Errori possono essere evitati, race condition, dead lock, ecc. Bisogna capire durante la computazione, usando la *logica*.
 
 $$(p \vee q) \wedge (\neg p \vee \neg q)$$
@@ -14,8 +14,6 @@ Un **linguaggio logico** è un linguaggio formale formato:
 - *regole d'inferenza*, per ottenere nuove verità dagli assiomi
 
 Applicare un algoritmo/teorema lo si fa partendo da assiomi e regole. Purtroppo il linguaggio minimo per descrivere la matematica fa sì che per come è fatto (aritmetica dei numeri interi), non ci sono sempre dimostrazioni per il teorema.
-
----
 # Logica proposizionale
 La **logica proposizionale** è formata da simboli: questi simboli sono *atomi* e sono letti come se fossero affermazioni *TRUE* o *FALSE*. Avere la logica ci permette di descrivere la correttezza, ma nel corso vedremo di più il suo uso per la concorrenza.
 
@@ -42,15 +40,16 @@ $$p \wedge q \wedge r \to ((p \wedge q)\wedge r)$$
 Se qualcuno fornisce un insieme non vuoto, riusciamo a creare formule ben formate. Abbiamo così la sintassi, ci serve ora la semantica. La logica delle proposizioni serve ad attribuire un *significato* che è un *valore di verità*. 
 Una interpretazione è una funzione che assegna un valore di verità a ciascun e ogni simbolo di $P$.
 
-`esempio di interpretazione P`
-
-|     | p   | q   | r   |
+> [!example] Esempio d'interpretazione $P$
+> 
+|     | $p$   | $q$   | $r$   |
 | --- | --- | --- | --- |
-| I1  | F   | F   | F   |
-| I2  | F   | F   | T   |
-| I3  | F   | T   | F   |
-| I4  | T   | F   | F   |
+| $I_1$  | $\mathtt{F}$   | $\mathtt{F}$   | $\mathtt{F}$   |
+| $I_2$  | $\mathtt{F}$   | $\mathtt{F}$   | $\mathtt{T}$   |
+| $I_3$  | $\mathtt{F}$   | $\mathtt{T}$   | $\mathtt{F}$   |
+| $I_4$  | $\mathtt{T}$   | $\mathtt{F}$   | $\mathtt{F}$   |
 | ... | ... | ... | ...    |
+
 *Cosa succede se $P$ è infinito*?
 Il numero d'interpretazioni possibili diventerebbe $2^\infty$, con 2 gli stati possibili *TRUE* e *FALSE*.
 
