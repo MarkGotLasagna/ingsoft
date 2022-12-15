@@ -2,16 +2,8 @@ $\mathtt{NOTE}$
 Continuo dell'esempio [[Example06]] con soluzione al problema di sincronizzazione visto alla fine.
 
 ---
-
-<center>Table of contents</center>
-
-- [[#`it.unipr.informatica.concurrent`]]
-	- [[#`Callback.java`]]
-	- [[#`ExecutorService.java`]]
-		- [[#Implementazioni di `Callback.java`]]
-- [[#Example07]]
-	- [[#`DownloadManager.java`]]
-	- [[#`Example07.java`]]
+```toc
+```
 
 # `it.unipr.informatica.concurrent`
 ## `Callback.java`

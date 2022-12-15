@@ -1,26 +1,10 @@
-$\mathtt{NOTA\ SUL\ CODICE}$
-Le lezioni sugli esempi di programmazione in JAVA saranno d'ora in avanti così annotate:
+$\mathtt{NOTE}$
 - ciascuna parte di codice di rilevanza, verrà qui discussa nel dettaglio;
 - la discussione sul codice è presa dalle lezioni in presenza/registrazioni, potete verificarne così la veridicità;
-- il codice finale (nella cartella `JAVA/eclipse-workspace/Example/src`) potrebbe non essere lo stesso codice che riscontrate qui. Tuttavia non vi perdete nulla siccome discuterò anche quello.
-
+- usiamo JAVA8 come versione; quando viene cercato su internet un metodo o una classe, fare attenzione che la documentazione si riferisca alla versione giusta.
 ---
-
-<center>Table of contents</center>
-
-- [[#Costruzione dei thread]]
-	- [[#`Notifier`]]
-		- [[#`InterruptedException` vs `Throwable`]]
-		- [[#`Notifier.java`]]
-		- [[#`Notifier` + `Example01`]]
-	- [[#`Waiter`]]
-		- [[#`mutex` e regione critica]]
-	- [[#Esemplificazione del codice]]
-		- [[#Metodi separati]]
-		- [[#Interfacce funzionali ( -> )]]
-	- [[#Soluzione al problema di sincronizzazione]]
-- [[#`Example01.java`]]
-
+```toc
+```
 
 # Costruzione dei thread
 

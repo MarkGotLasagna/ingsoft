@@ -1,19 +1,5 @@
-
-<center>Table of contents</center>
-
-- [[#Pool of resources]]
-- [[#`it.unipr.informatica.concurrent`]]
-	- [[#Thread pools]]
-		- [[#Executors]]
-			- [[#`Executor.java`]]
-			- [[#`RejectedExecutionException.java`]]
-			- [[#`ExecutorService.java`]]
-			- [[#`Executors.java`]]
-			- [[#`SimpleThreadPoolExecutorService.java`]]
-- [[#Example05]]
-	- [[#`DownloadManager.java`]]
-	- [[#`Example05.java`]]
-
+```toc
+```
 # Pool of resources
 Se abbiamo per esempio 10 risorse e 20 flussi di esecuzione, fintanto che i flussi di esecuzione richiedenti la risorsa non superano il numero di risorse disponibili, allora non ci saranno problemi.
 

@@ -70,7 +70,7 @@ Usiamo l'esempio dei books visto in precedenza.
 Per fare testing, useremo soltanto `SimpleBook.java` e per farlo creiamo un altro progetto.
 Quando lo costruiamo, diamo alla nostra unit test lo stesso nome dell'unità che vogliamo testare, terminando con 'Tests', e cliccando sul package creiamo un nuovo 'JUnit Test Case'.
 
-![[Pasted image 20221215090807.png|650]]
+![[Pasted image 20221215090807.png|550]]
 
 Alla nuova finestra che si aprirà, non è necessario inserire nulla se non il nome della classe con i test. Il resto delle opzioni possono essere codificate direttamente scrivendolo in codice.
 
@@ -127,8 +127,17 @@ Altre volte, ci serve verificare l'uguaglianza tra dati.
 ```
 
 Per eseguire i test, uno dopo l'altro, contenuti nella nostra test suite, eseguiamo la classe come una 'JUnit Test'. L'operazione va fatta prima di commit.
-Se siamo convinti della copertura e non c'è nessun errore o fallimento, possiamo fare commit sulla repository.
+Se siamo convinti della copertura e non c'è nessun errore o fallimento, possiamo poi fare commit sulla repository.
 
 ![[Pasted image 20221215093209.png|400]]
 
-![[Pasted image 20221215093406.png|350]]
+Nel caso di avvenuta esecuzione dei test, con successo, allora vedremo il colore della barra nel tab JUnit, <mark style="background: #BBFABBA6;">verde</mark>. In caso contrario, la barra sarà <mark style="background: #FF5582A6;">rossa</mark>.
+Il fallimento si riferisce al metodo che stiamo usando per testare, non che il codice sia sbagliato di per se. Scrivere il test in modo sbagliato è possibile e può accadere.
+
+| Caso successo | Caso Fallimento |
+| ------------- | --------------- |
+| ![[Pasted image 20221215093406.png\|350]]              | ![[Pasted image 20221215122757.png\|350]]                |
+
+Il *coverage*, ovvero quanto del codice che abbiamo scritto viene coperto con dei test, viene riportato in un tab in basso.
+
+![[Pasted image 20221215124443.png|500]]

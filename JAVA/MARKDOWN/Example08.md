@@ -1,18 +1,5 @@
-
-<center>Table of contents</center>
-
-- [[#Reflections]]
-	- [[#Class Objects]]
-		- [[#`getClass()`]]
-		- [[#`forName(n)`]]
-		- [[#`loadClass(n)`]]
-		- [[#`cast(o)`]]
-		- [[#`isInstance(o)`]]
-		- [[#`isAssignableFrom(k)`]]
-	- [[#Introspection]]
-- [[#Example08]]
-	- [[#`Example08.java`]]
-
+```toc
+```
 # Reflections
 La JVM provvede modi, tramite il package `java.lang.reflect` di postporre decisioni a runtime. Seppur linguaggio statico, JAVA provvede modi orientati agli oggetti per:
 - linking dinamico delle classi;

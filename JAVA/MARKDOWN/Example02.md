@@ -1,25 +1,5 @@
-$\mathtt{NOTE}$
-- Usiamo JAVA8 come versione. 
-   Quando viene cercato su internet un metodo o una classe, fare attenzione che la docuentazione si riferisca alla versione giusta.
-
----
-
-<center>Table of contents</center>
-
-- [[#Astrazioni di alto livello]]
-	- [[#`Concurrency`]]
-		- [[#`BlockingQueue.java`]]
-		- [[#`LinkedBlockingQueue.java`]]
-			- [[#`put()`]]
-			- [[#`take()`]]
-			- [[#`remainingCapacity()`]]
-			- [[#`isEmpty()`]]
-			- [[#`clear()`]]
-	- [[#`Example02`]]
-		- [[#`Producer.java`]]
-		- [[#`Consumer.java`]]
-		- [[#`Example02.java`]]
-
+```toc
+```
 # Astrazioni di alto livello
 In una versione semplice di quello che abbiamo visto in [[Example01]], il livello di astrazione in cui separavamo `Notifier` e `Waiter` non era molto alto.
 Programmare vicino alla macchina, vicino al SO, ha vantaggio se quello che andiamo a fare è critico, causa quantità risorse di calcolo elevate, non lo è tuttavia sempre.
@@ -93,9 +73,8 @@ public interface BlockingQueue<T> {
 ### `LinkedBlockingQueue.java`
 Implementa l'interfaccia che abbiamo visto sopra.
 
-[LinkedBlockingQueue documetnation Oracle](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/LinkedBlockingQueue.html)
+[LinkedBlockingQueue documentation Oracle](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/LinkedBlockingQueue.html)
 
-> [!example] `LinkedBlockingQueue.java`
 ```java
 package it.unipr.informatica.concurrent;
 
@@ -217,7 +196,6 @@ La distruzione non avviene veramente, dovremmo mettere a `NULL` il riferimento a
 
 ## `Example02`
 ### `Producer.java`
->[!example] `Producer.java`
 ```java
 package it.unipr.informatica.examples;
 
@@ -256,7 +234,6 @@ public class Producer implements Runnable {
 ```
 Ciascun thread ha il compito di *produrre* 5 messaggi ciascuno e di fornirli per essere letti dal consumer.
 ### `Consumer.java`
-> [!example] `Consumer.java`
 ```java
 package it.unipr.informatica.examples;
 
@@ -292,7 +269,6 @@ public class Consumer implements Runnable {
 ```
 Ciascun thread ha il compito di *consumare* 5 messaggi, prodotti da un producer.
 ### `Example02.java`
->[!example] `Example02.java`
 ```java
 package it.unipr.informatica.examples;
 

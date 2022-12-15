@@ -1,17 +1,5 @@
-
-<center>Table of contents</center>
-
-- [[#Callable & Future]]
-- [[#`it.unipr.informatica.concurrent`]]
-	- [[#`ExecutionException.java`]]
-	- [[#`Future.java`]]
-	- [[#`SimpleFuture.java`]]
-	- [[#`ExecutorService.java`]]
-	- [[#`SimpleThreadPoolExecutorService.java`]]
-- [[#Example06]]
-	- [[#`ResourceContent.java`]]
-	- [[#`DownloadManager.java`]]
-	- [[#`Example06.java`]]
+```toc
+```
 
 # Callable & Future
 Quello che abbiamo fatto nell'[[Example05]] e' usare un `ExecutorService` solo tramite interfaccia base `Executor` con `task` di tipo `Runnable`, senza argomenti senza tipo di argomento in ritorno.
@@ -338,7 +326,7 @@ gantt
 	title sincronizzazione di Example06.java
 
 section go ( )
-	attesa iniziale di qualche secondo   :crit, done, :a,0, 1s
+	attesa iniziale di qualche secondo    :a ,0, 1s
 section future1
 	google.it    :a1, after a,250ms
 section future2
