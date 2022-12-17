@@ -13,7 +13,7 @@ Contiene appunti presi durante le lezioni e i programmi JAVA creati e compilati 
 
 Il corso è unico, tuttavia una sua parte, viene presa in carico dal [Prof. Lars Bendix](https://fileadmin.cs.lth.se/cs/Personal/Lars_Bendix/Teaching/1-ECTS-SCM/Parma-22/) dell'università di Lund, Svezia; periodo in cui viene spiegata la configurazione e management dei software attraverso l'uso di Github.
 
-## Tools 🛠️
+## Tools
 
 **Text editors**
 - `Obsidian.md` per prendere appunti in markdown
@@ -22,7 +22,7 @@ Il corso è unico, tuttavia una sua parte, viene presa in carico dal [Prof. Lars
 **IDE**
 - `Eclipse` (strettamente legato al corso)
 
-## Directory structure 📑
+## Directory structure
 
 ```
 Documents/Obsidian Vault/UNI/ING. SOFTW.
@@ -69,7 +69,7 @@ Lista di plugins utilizzati:
 └── table-editor-obsidian
 ```
 
-## Contributing 🌠
+## Contributing
 Chiunque puo' *contribuire* al progetto.
 Per farlo chiedo di usare gli stessi strumenti da me utlizzati (in particolare `Obsidian.md`):
 - modifiche sintattiche;
@@ -78,7 +78,7 @@ Per farlo chiedo di usare gli stessi strumenti da me utlizzati (in particolare `
 
 Se non siete familiari con GitHub, vi consiglio i DOCs ufficiali: [About forks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks) e [About pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests).
 
-## Similar repos ❤️
+## Similar repos
 Repository di persone che stanno/hanno seguito il corso sono esistenti e incoraggio a dare un'occhiata siccome più complete di questa.
 
 - Tommaso Pellegrini
