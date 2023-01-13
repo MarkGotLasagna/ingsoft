@@ -1,0 +1,13 @@
+{
+	"nodes":[
+		{"id":"45a9c347d1298797","x":-795,"y":-489,"width":328,"height":346,"type":"text","text":"Prendiamo l'oggetto che ci interessa copiare, lo cloniamo e a tempo d'esecuzione: copiamo messaggi, eliminiamo stati o li aggiungiamo. L'oggetto primordiale e' quello da qui partono tutte le copie.\n\n![[Pasted image 20221221111149.png]]"},
+		{"id":"a781510f4e17053e","x":83,"y":-402,"width":332,"height":173,"type":"text","text":"```\nanOperation{\n\t...\n\tp = prototype.clone();\n\t...\n}\n```"},
+		{"id":"9a33aa81e36a58f9","x":-770,"y":-86,"width":278,"height":139,"type":"file","file":"PICS/Pasted image 20221221111434.png"},
+		{"id":"6618beac3c69cdfb","x":-349,"y":-472,"width":325,"height":312,"type":"text","text":"Nel momento in cui ci viene passato un `Prototype` chiamiamo `clone()` per creare una copia a tempo d'esecuzione.\n\n![[Pasted image 20221221111313.png]]"}
+	],
+	"edges":[
+		{"id":"7dce6dce13682e0a","fromNode":"45a9c347d1298797","fromSide":"right","toNode":"6618beac3c69cdfb","toSide":"left"},
+		{"id":"1708964050c45a03","fromNode":"6618beac3c69cdfb","fromSide":"right","toNode":"a781510f4e17053e","toSide":"left"},
+		{"id":"da5611b1456a6c4f","fromNode":"9a33aa81e36a58f9","fromSide":"top","toNode":"45a9c347d1298797","toSide":"bottom"}
+	]
+}

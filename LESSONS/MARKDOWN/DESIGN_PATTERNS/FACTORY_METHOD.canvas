@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"id":"347e3d32a49e8ab5","x":-757,"y":-447,"width":434,"height":264,"type":"text","text":"`Creator` contiene la ridefinizione del costruttore `factoryMethod()`\n\n![[Pasted image 20221221104121.png]]"},
+		{"id":"ddb20155f4e2b12e","x":-757,"y":-121,"width":434,"height":264,"type":"text","text":"`ConcreteCreator` contiene un costruttore a nome `factoryMethod()`\n\n![[Pasted image 20221221104529.png]]"},
+		{"id":"341c1b9037603dae","x":-182,"y":-452,"width":355,"height":274,"type":"text","text":"`factoryMethod()` si dovrebbe limitare a ritornare la `new` della classe completa, perche' tutto sia il piu' pulito possibile\n\n```\nanOperation() {\n\t...\n\tproduct = factoryMethod();\n\t...\n}\n```"},
+		{"id":"4347b43288e0706e","x":-985,"y":83,"width":180,"height":60,"type":"text","text":"`ConcreteProduct`"},
+		{"id":"cd171cda17b5ddd3","x":-971,"y":-121,"width":153,"height":60,"type":"text","text":"`Product`"}
+	],
+	"edges":[
+		{"id":"cc3b1135af989a52","fromNode":"347e3d32a49e8ab5","fromSide":"right","toNode":"341c1b9037603dae","toSide":"left"},
+		{"id":"4ab2fefb55826537","fromNode":"ddb20155f4e2b12e","fromSide":"top","toNode":"347e3d32a49e8ab5","toSide":"bottom"},
+		{"id":"3fc51dd2ec129819","fromNode":"ddb20155f4e2b12e","fromSide":"left","toNode":"4347b43288e0706e","toSide":"right"},
+		{"id":"d717ca9548855d60","fromNode":"4347b43288e0706e","fromSide":"top","toNode":"cd171cda17b5ddd3","toSide":"bottom"}
+	]
+}

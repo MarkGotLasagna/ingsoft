@@ -1,0 +1,17 @@
+{
+	"nodes":[
+		{"id":"dc44aa0780c4b20e","x":-950,"y":-870,"width":458,"height":301,"type":"text","text":"Interfaccia/classe astratta, qualche cosa di sufficientemente astratto che chiamiamo `Builder`.\n\n![[Pasted image 20221221093231.png|400]]"},
+		{"id":"3bb871d894983763","x":-950,"y":-451,"width":460,"height":301,"type":"text","text":"Concretizzazione dell'interfaccia astratta `Builder`.\n\n![[Pasted image 20221221093517.png|400]]"},
+		{"id":"b362789f826035dc","x":-448,"y":-374,"width":322,"height":147,"type":"text","text":"![[Pasted image 20221221094639.png]]"},
+		{"id":"88c9b48906b3edf5","x":-308,"y":-150,"width":365,"height":200,"type":"text","text":"`getResult()`\nAppena costruito il numero sufficiente di componenti, facciamo la funzione per ottenere il *prodotto*.\n```\nreturn builder.getResult()\n```"},
+		{"id":"27824bc57df5deb9","x":-308,"y":-687,"width":365,"height":237,"type":"text","text":"`buildPart()`\nIl *build* viene fatto per ogni parte che andiamo a costruire del nostro oggetto composto.\n```\nfor all objects in structure (\n\tbuilder.buildPart()\n)\n```"},
+		{"id":"16e588c3fb728a2a","x":167,"y":-360,"width":329,"height":120,"type":"text","text":"![[Pasted image 20221221094425.png]]"}
+	],
+	"edges":[
+		{"id":"9acb023ec290077e","fromNode":"dc44aa0780c4b20e","fromSide":"bottom","toNode":"3bb871d894983763","toSide":"top"},
+		{"id":"a0469feba52a43a9","fromNode":"27824bc57df5deb9","fromSide":"right","toNode":"16e588c3fb728a2a","toSide":"left"},
+		{"id":"f6753b3ea5b3f8cb","fromNode":"b362789f826035dc","fromSide":"bottom","toNode":"88c9b48906b3edf5","toSide":"top"},
+		{"id":"8463ee04cd80f3e0","fromNode":"b362789f826035dc","fromSide":"top","toNode":"27824bc57df5deb9","toSide":"bottom"},
+		{"id":"85934f73b5c7f9e2","fromNode":"3bb871d894983763","fromSide":"right","toNode":"b362789f826035dc","toSide":"left"}
+	]
+}
