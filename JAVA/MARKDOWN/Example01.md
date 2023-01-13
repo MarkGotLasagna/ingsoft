@@ -406,7 +406,7 @@ public class Example01 {
 		// ridondante, ma per sicurezza lo mettiamo
 		waitInProgress = false;
 		Thread notifier = new Thread(this::doNotify);
-		Thread notifier = new Thread(this::doWait);
+		Thread waiter = new Thread(this::doWait);
 		notifier.start();
 		waiter.start();
 	}
@@ -421,6 +421,7 @@ public class Example01 {
 			} catch(Throwable throwable) {
 				//blank
 			}
+			waitInProgress = false;
 		}
 		System.out.println("Waiter terminated");
 	}
