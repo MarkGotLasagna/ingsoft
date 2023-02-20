@@ -189,7 +189,7 @@ Effetto di ritornare un `Future`, andare a impostare il valore a `null` appena f
 Logica identica a quella vista sopra tranne che utilizza il risultato della `call()` sul task per impostare il valore del `Future` anziche' il valore nullo.
 ```java
 //...
-	public <T> Future<T> submit(Runnable task) {
+	public <T> Future<T> submit(Callable<T> tasks) {
 		if(task == null)
 			throw new NullPointerException("task == null");	
 		SimpleFuture<T> future = new SimpleFuture<>();
