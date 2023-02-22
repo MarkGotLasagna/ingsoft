@@ -28,7 +28,7 @@ package it.unipr.informatica.concurrent;
 public interface ExecutorService extends Executor {
 	//...
 	
-	public void submit(Runnable task, Callback<T> callback);
+	public void submit(Runnable task, Callback<?> callback);
 	public <T> void submit(Callable<T> task, Callback<T> callback);
 }
 ```
