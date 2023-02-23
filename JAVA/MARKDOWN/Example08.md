@@ -20,7 +20,7 @@ Ogni oggetto descrittore, viene associato ad un oggetto che e' stato utilizzato 
 
 ## Class Objects
 ### `getClass()`
-Se abbiamo un oggetto `o` non nullo, e chiamiamo `getClass()` su un reference a questo, otteniamo il descritto della *factory class* di `o`.
+Se abbiamo un oggetto `o` non nullo, e chiamiamo `getClass()` su un reference a questo, otteniamo il descrittore della *factory class* di `o`.
 > [!example]
 > Se abbiamo in mano un `Runnable`, interfaccia, abbiamo un oggetto che l'ha comunque creato. Quindi se facciamo `riferimento.getClass()` otteniamo il descrittore della classe che l'ha creato.
 
