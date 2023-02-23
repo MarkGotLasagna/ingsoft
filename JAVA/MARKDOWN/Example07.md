@@ -16,7 +16,9 @@ package it.unipr.informatica.concurrent;
 
 public interface Callback<T> {
 	public void onSuccess(T result);
-	public void onFailure(Throwable throwable);
+	public default void onFailure(Throwable throwable) {
+        	throwable.printStackTrace();
+    	}
 }
 ```
 
@@ -28,7 +30,7 @@ package it.unipr.informatica.concurrent;
 public interface ExecutorService extends Executor {
 	//...
 	
-	public void submit(Runnable task, Callback<T> callback);
+	public void submit(Runnable task, Callback<?> callback);
 	public <T> void submit(Callable<T> task, Callback<T> callback);
 }
 ```
