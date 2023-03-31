@@ -307,13 +307,13 @@ public class Example05 {
 	private void go() {
 		DownloadManager downloadManager = new DownloadManager(4);
 		
-		downloadManager.downlaod("https://www.google.it");
-		downloadManager.downlaod("https://www.youtube.it");
-		downloadManager.downlaod("https://www.amazon.it");
+		downloadManager.download("https://www.google.it");
+		downloadManager.download("https://www.youtube.it");
+		downloadManager.download("https://www.amazon.it");
 		// l'host esiste ma non ha porta aperta(?)
-		downloadManager.downlaod("https://www.missingwebsite.com");
-		downloadManager.downlaod("https://www.ebay.it");
-		downloadManager.downlaod("https://maruko.it");
+		downloadManager.download("https://www.missingwebsite.com");
+		downloadManager.download("https://www.ebay.it");
+		downloadManager.download("https://maruko.it");
 		
 		try {
 			Thread.sleep(10000);
