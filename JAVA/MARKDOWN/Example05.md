@@ -283,7 +283,7 @@ Stampiamo i dati scaricati e in qualsiasi momento se c'e' qualche problema, vien
 				read = bufferedInputStream.read(buffer);
 			}
 			byte[] data = outputStream.toByteArray();
-			System.out.println("Downloaded" + data.lenght + 
+			System.out.println("Downloaded" + data.length + 
 			" bytes from " + url);
 			} catch (Throwable throwable) {
 				System.err.println("Cannot download with error: " + 
