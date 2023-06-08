@@ -83,4 +83,5 @@ Repository di persone che stanno/hanno seguito il corso sono esistenti e incorag
 - Tommaso Pellegrini
   - https://github.com/netpawn/ISW_Java_Concurrency
   - https://github.com/netpawn/GoF_DPs_Java_Examples
-
+- Dennis Turco
+  - https://github.com/DennisTurco/Ingegneria-del-Software
