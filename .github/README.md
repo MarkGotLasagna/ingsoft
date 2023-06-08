@@ -57,3 +57,5 @@ Repository di persone che stanno/hanno seguito il corso sono esistenti e incorag
   - https://github.com/netpawn/GoF_DPs_Java_Examples
 - Dennis Turco
   - https://github.com/DennisTurco/Ingegneria-del-Software
+- Davoleo
+  - https://github.com/Davoleo/uni/tree/master/IdS
