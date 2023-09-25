@@ -42,7 +42,7 @@ La logica temporale lineare è la più semplice, andando a mettere all'interno d
 | $X_p$         | $p$ è *vera* nel *prossimo istante* temporale                  |
 | $G_p$         | $p$ è *globalmente vero* in *tutti i momenti futuri* possibili |
 | $F_p$         | $p$ è *vera* in *qualche momento nel futuro*                   |
-| $p U q$    | $p$ è *vera* finché $q$ è *vera*                               |
+| $p U q$    | $p$ è *vera* finché $q$ *non è vera*                               |
 
 > [!example] Esempio di LTL
 $G((\neg p \vee \neg t) \to X \neg b)$
